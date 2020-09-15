@@ -19,10 +19,17 @@ namespace Homework1
             double a2 = Math.Sqrt(Math.Pow((x2 - x3), 2) + Math.Pow((y2 - y3), 2));
             double a3 = Math.Sqrt(Math.Pow((x3 - x1), 2) + Math.Pow((y3 - y1), 2));
             double периметр = a1 + a2 + a3;
-            Console.WriteLine($"Периметр треугольника равен: {периметр:0.00}\n");
             double полумериметр = периметр / 2;
             double площадь = Math.Sqrt(полумериметр * (полумериметр - a1) * (полумериметр - a2) * (полумериметр - a3));
-            Console.WriteLine($"Площадь треугольника равна: {площадь:0.00}\n");
+            if (((a1 + a2 > a3) | (a1 + a3 > a2) | (a2 + a3 > a1))&(периметр!=0)&(площадь!=0))
+            {
+                Console.WriteLine($"Периметр треугольника равен: {периметр:0.00}\n");
+                Console.WriteLine($"Площадь треугольника равна: {площадь:0.00}\n");
+            }
+            else
+            {
+                Console.Write("Такого треугольника не существует");
+            }
         }
     }
 }
